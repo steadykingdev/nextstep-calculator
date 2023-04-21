@@ -30,4 +30,8 @@ class StringCalculatorTest {
         assertThat(cal.add("1,2:3")).isEqualTo(6);
     }
 
+    @Test void add_custom_delimeter() throws Exception{
+        assertThat(cal.add("//;\n1;2;3"));
+    }
+
 }
