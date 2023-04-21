@@ -30,8 +30,15 @@ class StringCalculatorTest {
         assertThat(cal.add("1,2:3")).isEqualTo(6);
     }
 
-    @Test void add_custom_delimeter() throws Exception{
+    @Test
+    public void add_custom_delimeter() throws Exception{
         assertThat(cal.add("//;\n1;2;3"));
+    }
+
+    @Test
+    public void add_negative() throws Exception {
+        assertThatThrownBy(() -> cal.add("-1,2,3"))
+                .isInstanceOf(RuntimeException.class);
     }
 
 }
