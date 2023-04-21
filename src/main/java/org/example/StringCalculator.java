@@ -5,13 +5,21 @@ import java.util.regex.Pattern;
 
 public class StringCalculator {
     int add(String text) {
-        if (text == null || text.isEmpty()) {
+        if (isBlank(text)) {
             return 0;
         }
 
-        String[] values = text.split(",");
 
-        return sum(toInts(values));
+
+        return sum(toInts(split(text)));
+    }
+
+    private boolean isBlank(String text) {
+        return text == null || text.isEmpty();
+    }
+
+    private String[] split(String text) {
+        return text.split(",");
     }
 
     private int[] toInts(String[] values) {
