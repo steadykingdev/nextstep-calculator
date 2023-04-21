@@ -25,4 +25,9 @@ class StringCalculatorTest {
         assertThat(cal.add("1")).isEqualTo(1);
     }
 
+    @Test
+    public void add_comma_separator() {
+        assertThat(cal.add("1,2")).isEqualTo(3);
+    }
+
 }

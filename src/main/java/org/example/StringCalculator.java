@@ -9,13 +9,14 @@ public class StringCalculator {
             return 0;
         }
 
-//        Matcher m = Pattern.compile("//(.)\n(.*)").matcher(text);
-//
-//        if (m.find()) {
-//            String customDelimeter = m.group(1);
-//            String[] tokens = m.group(2).split(customDelimeter);
-//        }
-
+        if (text.contains(",")) {
+            String[] values = text.split(",");
+            int sum = 0;
+            for (String value : values) {
+                sum += Integer.parseInt(value);
+            }
+            return sum;
+        }
 
         return Integer.parseInt(text);
     }
